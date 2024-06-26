@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:lesson_64/controllers/cart_controller.dart';
 import 'package:lesson_64/views/screens/home_screen.dart';
 
-void main(){
-  runApp(MyApp());
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(const MainApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (ctx) {
+          return CartController();
+        }),
+      ],
+      builder: (context, child) {
+        return MaterialApp(
+          darkTheme: ThemeData.dark(),
+          debugShowCheckedModeBanner: false,
+          home: ProductsScreen(),
+        );
+      },
     );
   }
 }
