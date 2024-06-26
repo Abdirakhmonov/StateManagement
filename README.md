@@ -2,6 +2,13 @@
 
 A new Flutter project.
 
+
+
+
+https://github.com/Abdirakhmonov/StateManagement/assets/156057814/b50869c1-8e20-40bc-b361-00b749ae44e6
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
